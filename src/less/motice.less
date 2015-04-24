@@ -1,0 +1,100 @@
+@import "animations/default";
+@import "animations/jelly";
+
+.motice-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.motice-container {
+    position: fixed;
+    z-index: 9999;
+    &-fluid-top, &-fluid-bottom {
+        left:0;
+        right:0;
+        .motice-base {
+            width:100%;
+            border-radius:0;
+        }
+    }
+    &-fluid-top {
+        top:0;   
+        .motice-base {
+            margin-top:0;
+        }
+    }
+    &-fluid-bottom {
+        bottom:0;
+        .motice-base {
+            margin-bottom:0
+        }
+    }
+    &-left-top, &-left-bottom {
+        .motice-base {
+            float:left;
+            clear:left;
+        }
+    }
+    &-left-top {
+        left:10px;
+        top:10px;
+    }
+    &-left-bottom {
+        left:10px;
+        bottom:10px;
+    }
+    &-right-top, &-right-bottom {
+        .motice-base {
+            float:right;
+            clear:right;
+        }
+    }
+    &-right-top {
+        right:10px;
+        top:10px;
+    }
+    &-right-bottom {
+        right:10px;
+        bottom:10px;
+        
+    }
+}
+
+/* Default themes */
+
+.motice-theme-dark {
+  background: rgba(35, 35, 46,0.85);
+  color: #f5f5f5;
+}
+.motice-theme-light {
+  background: rgba(245,245,245,0.85);
+  color: #202020;
+}
+.motice-img {
+    display: block;
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    float: left;
+}
+.motice-text {
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 10px 5px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.motice-item {
+    padding: 3px;
+    margin: 2px 0px;
+    border-radius: 2px;
+    min-height: 32px;
+    max-width: 100vw;
+    
+    &-noimg .motice-text {
+        padding-left: 6px;
+    }
+}
+

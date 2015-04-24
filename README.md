@@ -1,3 +1,17 @@
+Motice
+========
+
+[![Code Climate](https://codeclimate.com/github/mamboer/motice/badges/gpa.svg)](https://codeclimate.com/github/mamboer/motice)
+
+Simple notifications plugin with magical css3 effects, inspired by [andreyviktorov](https://github.com/andreyviktorov)'s [notiny](https://github.com/andreyviktorov/notiny)
+
+## Usage, demos, options and other
+
+[Visit project's website](http://mamboer.github.io/motice)
+
+
+## License info
+
 The MIT License (MIT)
 
 Copyright (c) 2015 Andrey Viktorov
@@ -19,4 +33,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-

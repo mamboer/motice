@@ -1,0 +1,47 @@
+{
+  "name": "motice",
+  "version": "1.0.0",
+  "title": "Motice - Simple jQuery Notification Plugin",
+  "description": "A Super Simple jQuery Notification Plugin With Magical Css3 Effects, Inspired by Notiny.",
+  "main": "dist/js/motice.js",
+  "baiduTJCode":"9cc664ff44b189790d0fcbdff4b53c07",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mamboer/motice.git"
+  },
+  "keywords": [
+    "Notification",
+    "Notice",
+    "Growl",
+    "Tip",
+    "Notification Effects",
+    "motice",
+    "css3",
+    "animation"
+  ],
+  "author": "Levin Van",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mamboer/motice/issues"
+  },
+  "homepage": "https://github.com/mamboer/motice",
+  "devDependencies": {
+    "express": "^4.12.3",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-csso": "^1.0.0",
+    "gulp-jshint": "^1.9.4",
+    "gulp-less": "^3.0.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-swig": "^0.7.4",
+    "gulp-uglify": "^1.1.0",
+    "gulp-sourcemaps": "^1.5.1",
+    "jshint-stylish": "^1.0.1"
+  }
+}

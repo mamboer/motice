@@ -1,0 +1,27 @@
+{
+  "name": "notiny",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mamboer/notiny",
+  "authors": ["Levin Van"],
+  "description": "A Super Tiny jQuery Notification Plugin",
+  "main": "dist/js/notiny.js",
+  "keywords": ["Notification","Notice","Growl","Tip","Notification Effects","notiny","css3","animation"],
+  "license": "MIT",
+  "dependencies":{
+    "classor":"~1.0.0",
+    "Snap.svg":"*"    
+  },
+  "ignore": [
+    "gulpfile.js",
+    "*.swig",
+    "src",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "*.json",
+    "site",
+    "*.html"
+  ]
+}

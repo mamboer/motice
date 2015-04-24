@@ -1,0 +1,55 @@
+.motice-effect-default {
+    &.motice-show {
+        animation: motice-anim-show-default 0.4s forwards;
+    }
+    &.motice-hide {
+        animation: motice-anim-hide-default 0.5s forwards;
+    }
+}
+
+@keyframes motice-anim-hide-default {
+  0% {
+    transform: scale(1, 1);
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.2, 1.2);
+  }
+  90% {
+  }
+  100% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(1, 1);
+  }
+}
+@keyframes motice-anim-show-default {
+  0% {
+    opacity: 0;
+    transform: scale(1, 1);
+    filter: blur(4px);
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  90% {
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes motice-anim-hover {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1.1, 1.1);
+  }
+}
