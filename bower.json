@@ -1,11 +1,11 @@
 {
-  "name": "notiny",
+  "name": "motice",
   "version": "1.0.0",
-  "homepage": "https://github.com/mamboer/notiny",
+  "homepage": "https://github.com/mamboer/motice",
   "authors": ["Levin Van"],
-  "description": "A Super Tiny jQuery Notification Plugin",
-  "main": "dist/js/notiny.js",
-  "keywords": ["Notification","Notice","Growl","Tip","Notification Effects","notiny","css3","animation"],
+  "description": "A Super Simple jQuery Notification Plugin With Magical Css3 Effects, Inspired by Notiny.",
+  "main": "dist/js/motice.js",
+  "keywords": ["Notification","Notice","Growl","Tip","Notification Effects","motice","css3","animation"],
   "license": "MIT",
   "dependencies":{
     "classor":"~1.0.0",
