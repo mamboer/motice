@@ -78,29 +78,60 @@
       <div class="column">
         <h1>Usage</h1>
         <h4>Basic notification:</h4>
-        <pre><code data-language="javascript">$.Motice({ text: 'Hello, world!' });</code></pre>
-        <div class="ui blue button" onclick="$.Motice({ text: 'Hello, world!' });">Run</div>
-        <h4>Notification with image:</h4>
-        <pre><code data-language="javascript">$.Motice({ text: 'Hello, image!', image: 'https://octodex.github.com/images/privateinvestocat.jpg' });</pre></code>
-        <div class="ui blue button" onclick="$.Motice({ text: 'Hello, image!', image: 'https://octodex.github.com/images/privateinvestocat.jpg' });">Run</div>
-        <h4>Notification on top right corner:</h4>
-        <pre><code data-language="javascript">$.Motice({ text: 'Notification at top right', position: 'right-top' });</pre></code>
-        <div class="ui blue button" onclick="$.Motice({ text: 'Notification at top right', position: 'right-top' });">Run</div>
+        <pre><code data-language="javascript">Motice({ text: 'Hello, Motice!' });</code></pre>
+        <div class="ui blue button" onclick="Motice({ text: 'Hello, Motice!' });">Run</div>
+        
+        <h4>Notification with custom image:</h4>
+        <pre><code data-language="javascript">Motice({ text: 'Motice with custom image!', image: 'http://faso.me/favicon.ico' });</pre></code>
+        <div class="ui blue button" onclick="Motice({ text: 'Motice with custom image!', image: 'http://faso.me/favicon.ico' });">Run</div>
+        
+        <h4>Notification with title:</h4>
+        <pre><code data-language="javascript">Motice({ title:'Motice' text: 'With title !'});</pre></code>
+        <div class="ui blue button" onclick="Motice({ title:'Motice', text: 'With title!' });">Run</div>
+        
+        <h4>Notification with close button:</h4>
+        <pre><code data-language="javascript">Motice({ title:'Motice' text: 'With close button !', closeButton:true });</pre></code>
+        <div class="ui blue button" onclick="Motice({ title:'Motice', text: 'With close button !', closeButton:true });">Run</div>
+        
+        <h4>Notification with progress bar counting for hiding:</h4>
+        <pre><code data-language="javascript">Motice({ title:'Motice' text: 'With progress bar !', progressBar:true });</pre></code>
+        <div class="ui blue button" onclick="Motice({ title:'Motice', text: 'With progress bar !', progressBar:true });">Run</div>
+        
+        <h4>
+            Notification on specified position:
+            <select id="pos" class="ui dropdown">
+                <option value="right-bottom">right-bottom</option>
+                <option value="right-top" selected>right-top</option>
+                <option value="left-bottom">left-bottom</option>
+                <option value="left-top">left-top</option>
+                <option value="center-bottom">center-bottom</option>
+                <option value="center-top">center-top</option>
+                <option value="fluid-bottom">fluid-bottom</option>
+                <option value="fluid-top">fluid-top</option>
+            </select>
+        </h4>
+        <pre><code data-language="javascript">Motice({ title:'Motice Position',text: 'Notification at top right', position: 'right-top' });</pre></code>
+        <div class="ui blue button" onclick="Motice({ title:'Motice Position', text: 'Notification at '+$('#pos').val().replace('-',' '), position: $('#pos').val() });">Run</div>
         <h4>Notification with auto width:</h4>
-        <pre><code data-language="javascript">$.Motice({ width: 'auto', text: 'Not too long text' });</pre></code>
-        <div class="ui blue button" onclick="$.Motice({ width: 'auto', text: 'Not too long text' });">Run</div>
-        <h4>Notification on top with fluid width:</h4>
-        <pre><code data-language="javascript">$.Motice({ position: 'fluid-top', text: 'Notification at top with fluid width' });</pre></code>
-        <div class="ui blue button" onclick="$.Motice({ position: 'fluid-top', text: 'Notification at top with fluid width' });">Run</div>
-        <h4>Notification on bottom with fluid width:</h4>
-        <pre><code data-language="javascript">$.Motice({ position: 'fluid-bottom', text: 'Notification at bottom with fluid width' });</pre></code>
-        <div class="ui blue button" onclick="$.Motice({ position: 'fluid-top', text: 'Notification at bottom with fluid width' });">Run</div>
-        <h4>Notification with jelly effect:</h4>
-        <pre><code data-language="javascript">$.Motice({ autoHide:false, effect: 'jelly', text: '<a href="http://github.com/mamboer/{{name}}" target="_blank">Notification with jelly effect</a>' });</pre></code>
-        <div class="ui blue button" onclick='jelly()'>Run</div>
+        <pre><code data-language="javascript">Motice({ width: 'auto', text: 'Not too long text' });</pre></code>
+        <div class="ui blue button" onclick="Motice({ width: 'auto', text: 'Not too long text' });">Run</div>
+        <h4>
+            Notification with specified effect:
+            <select id="eff" class="ui dropdown">
+                <option value=''>No Effect</option>
+                <option value='default'>default</option>
+                <option value='jelly' selected>jelly</option>
+            </select>
+        </h4>
+        <pre><code data-language="javascript">Motice({ title:'Motice effect',effect: 'jelly', text: '<a href="http://github.com/mamboer/{{name}}" target="_blank">Notification with jelly effect</a>' });</pre></code>
+        <div class="ui blue button" onclick='effect()'>Run</div>
         <script>
-            var jelly = function(){
-                $.Motice({ autoHide:false, effect: "jelly", text: '<a href="http://github.com/mamboer/{{name}}" target="_blank">Notification with jelly effect</a>' });
+            var effect = function(){
+                Motice({ 
+                    title:'Motice Effect',
+                    effect: $('#eff').val(), 
+                    text: '<a href="http://github.com/mamboer/{{name}}" target="_blank">Notification with effect: '+ $('#eff').val()||'none' +'</a>' 
+                });
             };
         </script>
       </div>
@@ -113,30 +144,45 @@
         <h1>Options</h1>
         <p>All Motice options:</p>
         <pre><code data-language="javascript">{
-  // Image path (http/base64)
+  // background image path (http/base64)
   image: undefined,
-  // Position on screen, values: right-bottom, right-top, left-bottom, left-top, fluid-top, fluid-bottom
+  // Position on screen, values: right-bottom, right-top, left-bottom, left-top, fluid-top, fluid-bottom, center-top, center-bottom
   position: 'right-bottom',
-  // Theme
-  theme: 'dark',
+  // Theme, values: default, info, warning, success, error
+  theme: 'default',
   // Template, these classes should ALWAYS be there
-  template: '<div class="motice-base"><img class="motice-img" /><div class="motice-text"></div></div>',
-  // css width
-  width: '300',
+  template:   '<div class="motice-item">' + 
+                '<div class="motice-progress"></div>' +
+                '<button type="button" class="motice-close-button" role="button">&times;</button>' +
+                '<div class="motice-title"></div>' +
+                '<div class="motice-text"></div>' + 
+            '</div>',
+  // hard-code css width, use theme specifed with by default
+  width: false,
   // Text that will be displayed in notification
   text: '',
-  // Display background or not, if false, background: transparent;
-  background: true,
-  // Hide automatically
-  autoHide: true,
+  // Title
+  title: null,
   // Hide by click
   clickHide: true,
-  // Autohide delay
-  delay: 3500,
+  // Autohide delay timeout
+  timeOut: 4500,
+  // autoHide delay timeout after hover out the notification
+  timeOutAfterHoverOut:2000,
   // Enable animation effects, default is 'default', another effect called 'jelly' is also provided inernally.
   effect: 'default',
   // We will put an effect class to the notification dom combining 'effectPrefix' and 'effect'
-  effectPrefix:'motice-effect-'
+  effectPrefix:'motice-effect-',
+  //progress bar
+  progressBar: false,
+
+  //close button
+  closeButton: false,
+
+  //callbacks
+  onShown: function(){},
+  onHidden:function(){},
+  onClick: null
 };</code></pre>
       </div>
     </div>
@@ -147,12 +193,16 @@
       <div class="sixteen wide column">
         <h1>Themes</h1>
         <h3>Default themes:</h3>
-        <div class="ui blue button" onclick="$.Motice({ theme: 'dark', text: 'Dark theme' });">Dark (default)</div> <div class="ui blue button" onclick="$.Motice({ theme: 'light', text: 'Light theme' });">Light</div>
+        <div class="ui blue button" onclick="Motice({ title:'Motice Theme', theme: 'default', text: 'Default theme' });">Dark (default)</div> 
+        <div class="ui blue button" onclick="Motice({ title:'Motice Theme', theme: 'info', text: 'Theme: info' });">info</div>
+        <div class="ui blue button" onclick="Motice({ title:'Motice Theme', theme: 'warning', text: 'Theme: warning' });">warning</div>
+        <div class="ui blue button" onclick="Motice({ title:'Motice Theme', theme: 'success', text: 'Theme: success' });">success</div>
+        <div class="ui blue button" onclick="Motice({ title:'Motice Theme', theme: 'error', text: 'Theme: error' });">error</div>
         <h3>Creating custom themes:</h3>
       </div>
       <div class="eight wide column">
         <h4>Example:</h4>
-        <pre><code data-language="javascript">$.Motice.addTheme('dark', {
+        <pre><code data-language="javascript">Motice.addTheme('dark', {
     classes: 'motice-theme-dark'
 });</code></pre>
         <pre><code data-language="css">.motice-theme-dark {
@@ -168,11 +218,15 @@
     Blocks order:
 
     | container
-    | - base
-    | -- image
+    | - item
+    | -- progress
+    | -- close-button
+    | -- title
     | -- text
-    | - base
-    | -- image
+    | - item
+    | -- progress
+    | -- close-button
+    | -- title
     | -- text
     | ...
 
@@ -230,11 +284,11 @@
         <p>
           <b>JavaScript</b>
         </p>
-        <pre><code data-language="javascript">$.Motice({
+        <pre><code data-language="javascript">Motice({
   text: 'Custom hide animation',
   effect: 'custom'
 });</code></pre>
-        <div class="ui blue button" onclick="$.Motice({text: 'Custom hide animation', effect: 'custom'});">Run</div>
+        <div class="ui blue button" onclick="Motice({text: 'Custom hide animation', effect: 'custom'});">Run</div>
       </div>
     </div>
   </div>

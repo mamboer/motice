@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/mamboer/motice",
   "authors": ["Levin Van"],
-  "description": "A Super Simple jQuery Notification Plugin With Magical Css3 Effects, Inspired by Notiny.",
+  "description": "For Gnome / Growl type non-blocking notifications with Magical Css3 Effects",
   "main": "dist/js/motice.js",
   "keywords": ["Notification","Notice","Growl","Tip","Notification Effects","motice","css3","animation"],
   "license": "MIT",
