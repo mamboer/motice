@@ -3,7 +3,7 @@ Motice
 
 [![Code Climate](https://codeclimate.com/github/mamboer/motice/badges/gpa.svg)](https://codeclimate.com/github/mamboer/motice)
 
-Simple notifications plugin with magical css3 effects, inspired by [andreyviktorov](https://github.com/andreyviktorov)'s [notiny](https://github.com/andreyviktorov/notiny)
+Simple notifications plugin with magical css3 effects, inspired by [notiny](https://github.com/andreyviktorov/notiny) and [toastr](https://github.com/CodeSeven/toastr)
 
 ## Usage, demos, options and other
 
