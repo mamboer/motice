@@ -33,7 +33,7 @@
           <h1>Motice</h1>
           <span class="ui mini label">v1.0.0</span>
         <p class="ui medium inverted header">
-          Just a little (only 5.1kb compressed) notifications plugin
+          Just a little (only 5kb compressed) notifications plugin
         </p>
         <a class="ui inverted blue huge button" href="https://github.com/mamboer/motice/archive/master.zip">Download</a>
         <br />
@@ -60,15 +60,23 @@
         <pre><code data-language="html">&lt;script src="/path/to/motice.min.js"&gt;&lt;/script&gt;
 &lt;link href="/path/to/motice.css" rel="stylesheet" /&gt;</code></pre>
         <div class="ui message warning">
-        <ul>
-            <li>
-                <i>Don't forget to load jQuery <b>before</b> motice.min.js!</i>
-            </li>
-            <li>
-                motice.js must be put inside the body tag.
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <i>Don't forget to load jQuery <b>before</b> motice.min.js!</i>
+                </li>
+                <li>
+                    motice.js must be put inside the body tag.
+                </li>
+            </ul>
         </div>
+        
+        <p>Or, load Motice via require.js</p>
+        <pre><code data-language="javascript">
+define(['jquery','motice'],function($,Motice){
+    Motice({ text:'Hello, Motice!' });    
+});
+</code></pre>
+
       </div>
     </div>
   </div>
