@@ -8,8 +8,7 @@
   "keywords": ["Notification","Notice","Growl","Tip","Notification Effects","motice","css3","animation"],
   "license": "MIT",
   "dependencies":{
-    "classor":"~1.0.0",
-    "Snap.svg":"*"    
+    "jquery":"*"    
   },
   "ignore": [
     "gulpfile.js",

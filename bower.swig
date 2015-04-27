@@ -8,8 +8,7 @@
   "keywords": {{keywords|raw|json}},
   "license": "MIT",
   "dependencies":{
-    "classor":"~1.0.0",
-    "Snap.svg":"*"    
+    "jquery":"*"    
   },
   "ignore": [
     "gulpfile.js",
