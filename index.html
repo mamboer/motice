@@ -89,6 +89,11 @@ define(['jquery','motice'],function($,Motice){
         <pre><code data-language="javascript">Motice({ text: 'Hello, Motice!' });</code></pre>
         <div class="ui blue button" onclick="Motice({ text: 'Hello, Motice!' });">Run</div>
         
+        <h4>Forcing close:</h4>
+        <pre><code data-language="javascript">Motice({ text: 'Hello, Motice!' });</code></pre>
+        <div class="ui blue button" onclick="window['motice2']=Motice({ text: 'Click Close button to close me immediately!' });">Run</div>
+        <div class="ui yellow button" onclick="motice2.close(true);">Close!</div>
+       
         <h4>Notification with custom image:</h4>
         <pre><code data-language="javascript">Motice({ text: 'Motice with custom image!', image: 'http://faso.me/favicon.ico' });</pre></code>
         <div class="ui blue button" onclick="Motice({ text: 'Motice with custom image!', image: 'http://faso.me/favicon.ico' });">Run</div>
