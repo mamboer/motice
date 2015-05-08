@@ -29,7 +29,7 @@
             // Hide by click
             clickHide: true,
             // Autohide timeout
-            timeOut: 4500,
+            timeOut: 3500,
             // timeout after hovering out
             timeOutAfterHoverOut:2000,
             // Enable animations
@@ -174,22 +174,31 @@
 
         motice.prototype = {
             _close:function(){
-                this.isAnimating = false;
+                this.isHiding = false;
+                this.isVisible = false;
                 this.$el.remove();
                 this.options.onHidden.call(this);
             },
-            close:function(){
+            close:function(force){
                 var self = this;
+
+                if( this.isHiding ) return;
                 
-                if( this.isAnimating ) return;
-                
+                // force close when showing
+                if( force && this.isShowing ) {
+                    //remove animationEnd event handler
+                    this.$el.off( animationEndEventName );
+                    //ensure shown
+                    this._show();   
+                } 
+
                 clearTimeout( this.autoHideTimer );
+
+                this.isHiding = true;
 
                 if(!supports.animation || !this.options.effect) {
                     return this._close();
                 }
-
-                this.isAnimating = true;
 
                 this.$el.removeClass(this.options.clShow)
                     .addClass(this.options.clHide);
@@ -200,13 +209,18 @@
                    
             },
             _show:function(){
-                this.isAnimating = false;
+                this.isShowing = false;
+                this.isVisible = true;
                 this._autoHide();
                 this.options.onShown.call(this);
             },
             show:function(){
                 var me = this;
-                if(this.isAnimating) return;
+
+                //is showing or hiding
+                if( this.isAnimating() ) return;
+
+                this.isShowing = true;
 
                 this.$el.removeClass(this.options.clHide).addClass(this.options.clShow);
                 
@@ -214,8 +228,6 @@
                     this._show();
                     return;
                 }
-
-                this.isAnimating = true;
 
                 this.$el.one(animationEndEventName,function(evt){
                     me._show();
@@ -242,9 +254,15 @@
                 }
 
             },
+            isAnimating: function() {
+                return ( this.isShowing || this.isHiding );    
+            },
             _init : function() {
                 
-                this.isAnimating = false;
+                this.isVisible = true;
+                this.isShowing = false;
+                this.isHiding = false;
+
                 var settings = this.options;
                 // Creating notification
                 var $notification = this.$el = $(settings.template);
@@ -399,10 +417,10 @@
         };
 
         // manual close via $.motice.close
-        Motice.close = function( $motice ){
+        Motice.close = function( $motice, force ){
             var inst = $motice.data('motice');
             if(inst){
-                inst.close();
+                inst.close(force);
             }
         };
 
