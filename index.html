@@ -31,9 +31,9 @@
     <div class="ui page grid">
       <div class="column center aligned site-header-column">
           <h1>Motice</h1>
-          <span class="ui mini label">v1.0.0</span>
+          <span class="ui mini label">v1.0.2</span>
         <p class="ui medium inverted header">
-          Just a little (only 5.1kb compressed) notifications plugin
+          Just a little (only 5kb compressed) notifications plugin
         </p>
         <a class="ui inverted blue huge button" href="https://github.com/mamboer/motice/archive/master.zip">Download</a>
         <br />
@@ -60,15 +60,23 @@
         <pre><code data-language="html">&lt;script src="/path/to/motice.min.js"&gt;&lt;/script&gt;
 &lt;link href="/path/to/motice.css" rel="stylesheet" /&gt;</code></pre>
         <div class="ui message warning">
-        <ul>
-            <li>
-                <i>Don't forget to load jQuery <b>before</b> motice.min.js!</i>
-            </li>
-            <li>
-                motice.js must be put inside the body tag.
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <i>Don't forget to load jQuery <b>before</b> motice.min.js!</i>
+                </li>
+                <li>
+                    motice.js must be put inside the body tag.
+                </li>
+            </ul>
         </div>
+        
+        <p>Or, load Motice via require.js</p>
+        <pre><code data-language="javascript">
+define(['jquery','motice'],function($,Motice){
+    Motice({ text:'Hello, Motice!' });    
+});
+</code></pre>
+
       </div>
     </div>
   </div>
@@ -81,6 +89,11 @@
         <pre><code data-language="javascript">Motice({ text: 'Hello, Motice!' });</code></pre>
         <div class="ui blue button" onclick="Motice({ text: 'Hello, Motice!' });">Run</div>
         
+        <h4>Forcing close:</h4>
+        <pre><code data-language="javascript">Motice({ text: 'Hello, Motice!' });</code></pre>
+        <div class="ui blue button" onclick="window['motice2']=Motice({ text: 'Click Close button to close me immediately!' });">Run</div>
+        <div class="ui yellow button" onclick="motice2.close(true);">Close!</div>
+       
         <h4>Notification with custom image:</h4>
         <pre><code data-language="javascript">Motice({ text: 'Motice with custom image!', image: 'http://faso.me/favicon.ico' });</pre></code>
         <div class="ui blue button" onclick="Motice({ text: 'Motice with custom image!', image: 'http://faso.me/favicon.ico' });">Run</div>
