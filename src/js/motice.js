@@ -208,6 +208,9 @@
                 });     
                    
             },
+            hide:function( force ){
+                this.close(force);
+            },
             _show:function(){
                 this.isShowing = false;
                 this.isVisible = true;
