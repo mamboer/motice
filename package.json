@@ -1,6 +1,6 @@
 {
   "name": "motice",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "title": "Motice - Lite jQuery Notification Plugin",
   "description": "For Gnome / Growl type non-blocking notifications with Magical Css3 Effects",
   "main": "dist/js/motice.js",

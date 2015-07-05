@@ -1,6 +1,6 @@
 {
   "name": "motice",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/mamboer/motice",
   "authors": ["Levin Van"],
   "description": "For Gnome / Growl type non-blocking notifications with Magical Css3 Effects",
