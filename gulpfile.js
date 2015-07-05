@@ -73,7 +73,7 @@ gulp.task('css',['less'],function(){
 gulp.task('watch',['express'], function() {
     livereload.listen();
     gulp.watch('src/less/**/*.less', ['reload']);  // Watch all the .less files, then run the less task
-    gulp.watch(['src/js/*.js','index.html'],['reload']);  // livereload not works for js file, so we have to reload the whole page
+    gulp.watch(['src/js/*.js','*.html'],['reload']);  // livereload not works for js file, so we have to reload the whole page
 });
 
 gulp.task('reload',['js','css','copy'],function(){

@@ -64,7 +64,8 @@
                 'fluid-top':null,
                 'fluid-bottom':null,
                 'center-top':null,
-                'center-bottom':null
+                'center-bottom':null,
+                'center':null
             },
             get:function( pos ) {
                 
