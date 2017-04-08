@@ -1,10 +1,10 @@
 {
   "name": "motice",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "title": "Motice - Lite jQuery Notification Plugin",
   "description": "For Gnome / Growl type non-blocking notifications with Magical Css3 Effects",
   "main": "dist/js/motice.js",
-  "baiduTJCode":"9cc664ff44b189790d0fcbdff4b53c07",
+  "baiduTJCode": "9cc664ff44b189790d0fcbdff4b53c07",
   "scripts": {
     "test": "mocha"
   },
@@ -29,19 +29,24 @@
   },
   "homepage": "https://github.com/mamboer/motice",
   "devDependencies": {
-    "express": "^4.12.3",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^2.1.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-csso": "^1.0.0",
-    "gulp-jshint": "^1.9.4",
-    "gulp-less": "^3.0.2",
-    "gulp-livereload": "^3.8.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-swig": "^0.7.4",
-    "gulp-uglify": "^1.1.0",
-    "gulp-sourcemaps": "^1.5.1",
-    "jshint-stylish": "^1.0.1"
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.5.1",
+    "gulp-swig": "^0.8.0",
+    "gulp-uglify": "^2.1.2",
+    "jquery": "^3.2.1",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "rainbow-code": "^2.1.2",
+    "semantic-ui": "^2.2.10",
+    "shelljs": "^0.7.7"
   }
 }

@@ -1,0 +1,90 @@
+.site-header-column {
+  padding: 5em 0 !important;
+}
+
+.site-header-column h1 {
+  font-size: 5em;
+  margin-bottom: 0 !important;
+}
+
+.site-header-column p {
+  margin: 0.5em 0em 1em 0em !important;
+}
+
+pre {
+  border-radius: 0.3em;
+  padding: 1.5em !important;
+}
+
+code {
+  font-family: monospace !important;
+  font-weight: 700;
+}
+
+.demo-header h1 {
+  font-size: 3em;
+}
+
+.demo-inner {
+  min-width: 100%;
+}
+
+.demo-outer {
+  min-height: 100%;
+}
+
+.addthis_sharing_toolbox {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+@-webkit-keyframes custom-hide-animation {
+  0% {
+    -webkit-transform: scale(1, 1);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+@-webkit-keyframes custom-show-animation {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@keyframes custom-hide-animation {
+  0% {
+    transform: scale(1, 1);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5, 1.5);
+  }
+}
+@keyframes custom-show-animation {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.motice-effect-custom.motice-hide {
+    animation: custom-hide-animation 0.5s forwards;
+    -webkit-animation: custom-hide-animation 0.5s forwards;
+}
+.motice-effect-custom.motice-show {
+    animation: custom-show-animation 0.5s forwards;
+    -webkit-animation: custom-show-animation 0.5s forwards;
+}
