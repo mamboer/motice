@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     jshintStylish = require('jshint-stylish'),
     sourcemaps = require('gulp-sourcemaps'),
+    shelljs = require('shelljs'),
     pkg = require('./package.json');
 
 
@@ -63,7 +64,7 @@ gulp.task('less',function(){
 
 gulp.task('css',['less'],function(){
 
-    return gulp.src('src/css/*.css',{base:'src'})
+    return gulp.src('src/css/motice*.css',{base:'src'})
         .pipe(csso())
         .pipe(gulp.dest('dist'))
         .pipe(livereload());  
@@ -113,17 +114,43 @@ gulp.task('swig',function(){
     
 });
 
-gulp.task('copy',function(){
+gulp.task('copy', function(){
     var siteFiles = ['package.json','dist/**'];
     gulp.src(siteFiles,{base:'.'})
         .pipe(gulp.dest('site'));
 
+    gulp.src(['src/css/style.css'],{base:'src'})
+        .pipe(gulp.dest('site/dist'));
+
     gulp.src(['src/vendors/**'],{base:'src'})
         .pipe(gulp.dest('dist'))
         .pipe(gulp.dest('site/dist'));
+    
+    gulp.src(['node_modules/jquery/dist/jquery.min.*'], {base: 'node_modules'})
+        .pipe(gulp.dest('site/dist'));
+
+    gulp.src([
+        'node_modules/rainbow-code/dist/rainbow.min.js',
+        'node_modules/rainbow-code/themes/css/solarized-dark.css',
+        'node_modules/rainbow-code/src/language/generic.js',
+        'node_modules/rainbow-code/src/language/shell.js',
+        'node_modules/rainbow-code/src/language/html.js',
+        'node_modules/rainbow-code/src/language/css.js',
+        'node_modules/rainbow-code/src/language/javascript.js'
+    ], {base: 'node_modules'})
+    .pipe(gulp.dest('site/dist'));
    
 
 });
 
+gulp.task('semantic', function () {
+    shelljs.cd('src/semantic/');
+    shelljs.exec('gulp build', function() {
+        shelljs.cd('../../');
+        shelljs.exec('gulp dev')
+    });
+});
 
-gulp.task('default',['js','css','swig','copy','watch']);
+gulp.task('default',['semantic']);
+gulp.task('dev',['js','css','swig','copy', 'watch']);
+gulp.task('build',['js','css','swig','copy']);

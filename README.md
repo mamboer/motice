@@ -9,6 +9,15 @@ Simple notifications plugin with magical css3 effects, inspired by [notiny](http
 
 [Visit project's website](http://mamboer.github.io/motice)
 
+## How to run
+
+```bash
+npm i // or yarn
+
+// build motice
+gulp build
+```
+
 
 ## License info
 

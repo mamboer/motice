@@ -357,7 +357,7 @@
                     $el = this.$el;
                 //close button
                 if( settings.closeButton ){
-                    $el.on('click.closeButton',function(e){
+                    $el.on('click.closeButton', '.motice-close-button', function(e){
                         me.close();
                         return false;
                     });
